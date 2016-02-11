@@ -1,0 +1,150 @@
+<html lang="en" >
+<head>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="BlankApp" ng-cloak>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+  <script type="text/javascript">
+    var app = angular.module('BlankApp', ['ngMaterial']);
+
+
+    app.directive('photoMatrix', function ($compile) {
+        return {
+            restrict: 'E',
+            templateUrl: 'filter.svg',
+            require: 'ngModel',
+            link: function (scope, element, attrs, ngModel) {
+              var temp = element[0].querySelector('#matrixer');
+              var matrix = angular.element(temp)
+
+              scope.init = function() {
+                scope.ylen = ngModel.$viewValue.length
+                scope.xlen = ngModel.$viewValue[0].length
+                scope.value = ""
+
+                for (var i=0; i<scope.ylen; i++){
+                  for (var j=0; j<scope.xlen; j++){
+                    scope.value += ngModel.$viewValue[i][j]
+                    scope.value += " "
+                  }
+                }
+                scope.dimer = scope.xlen.toString() + ',' + scope.ylen.toString()
+                matrix.attr("order", scope.dimer);
+                matrix.attr("kernelMatrix", scope.value);
+
+
+              }
+              ngModel.$render(function(){
+                scope.init()
+              })
+
+
+              scope.$watch(attrs.ngModel, function() {
+                scope.init()
+
+              }, true);
+
+
+
+
+            }
+        }
+    });
+
+
+    app.controller('AppCtrl', function($scope, $timeout){
+      $scope.select = [1,2,3,4,5,6,7,8,9]
+      $scope.axis = {
+        x: 3,
+        y: 3
+      }
+      $scope.myrra = []
+      $scope.myrra[0] = [1,2,3]
+      $scope.myrra[1] = [4,5,6]
+
+      $scope.init_values = function(){
+
+
+        $scope.values = []
+        for(var y = 0; y < $scope.axis.y; y++){
+          $scope.values[y] = [];
+          for(var x = 0; x < $scope.axis.x; x++){
+            $scope.values[y][x] = 8;
+          }
+        }
+
+        $scope.array_x = []
+        $scope.array_y = []
+
+        for (var i=0; i<$scope.axis.x; i++){
+          $scope.array_x[i] = i
+        }
+        for (var i=0; i<$scope.axis.y; i++){
+          $scope.array_y[i] = i
+        }
+
+
+
+      }
+
+      $scope.init_values()
+
+    })
+
+  </script>
+
+  <div class="main_scope" ng-controller="AppCtrl" layout="row" layout-fill>
+    <div class="left_scope" flex="50" layout="column"  layout-align="start center">
+      <div class="md-title">feConvolveMatrix</div>
+
+      <div layout="row" class="settings" layout-align="space-around start">
+
+        <md-input-container>
+          <label>X Axis</label>
+
+
+          <md-select ng-model="axis.x" ng-change="init_values()">
+            <md-option ng-repeat="one in select" ng-value="one">
+              {{one}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+        <md-input-container>
+          <label>Y Axis</label>
+
+
+          <md-select ng-model="axis.y" ng-change="init_values()">
+            <md-option ng-repeat="one in select" ng-value="one">
+              {{one}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+
+      </div>
+
+      <div class="boxes" layout="column">
+          <div class="line" ng-repeat="line in array_y" >
+            <input class="input_item" ng-repeat="item in array_x" ng-model="values[$parent.$index][$index]" />
+          </div>
+      </div>
+
+
+    </div>
+
+    <div class="right_scope" flex="50" layout="column"  layout-align="start center" layout-fill>
+
+        <photo-matrix flex style="width:100%;" ng-model="values"></photo-matrix>
+    </div>
+  </div>
+
+</body>
+</html>

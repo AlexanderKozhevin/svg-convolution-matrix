@@ -1,0 +1,42 @@
+textarea:focus, input:focus, button:focus, li:focus, a:focus, select:focus, tags-input:focus{
+	outline: 0!important;
+	box-shadow: none!important;
+}
+
+
+.main_scope{
+  height: 100vh;
+
+}
+
+
+
+.left_scope{
+  padding-top: 40px;
+}
+
+
+.settings{
+  width: 100%;
+}
+
+.boxes{
+
+}
+
+.right_scope{
+  overflow: hidden;
+}
+
+
+.input_item{
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: 5px;
+}
+
+.input_item:focus{
+  border: 1px solid red;
+}
