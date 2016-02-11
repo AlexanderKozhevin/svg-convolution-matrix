@@ -1,0 +1,28 @@
+{
+  "name": "svg-convolve",
+  "version": "0.0.1",
+  "description": "A sample application to play with svg-convultion filter",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderKozhevin/svg-convolution-matrix.git"
+  },
+  "keywords": [
+    "SVG",
+    "matrix",
+    "convolution"
+  ],
+  "author": "Alexander Kozhevin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderKozhevin/svg-convolution-matrix/issues"
+  },
+  "homepage": "https://github.com/AlexanderKozhevin/svg-convolution-matrix#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^2.3.1"
+  }
+}
