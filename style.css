@@ -1,42 +1,38 @@
+/*
+/ Snippet which disables chrome standard blue outline
+*/
 textarea:focus, input:focus, button:focus, li:focus, a:focus, select:focus, tags-input:focus{
 	outline: 0!important;
 	box-shadow: none!important;
 }
-
-
-.main_scope{
-  height: 100vh;
-
+a{
+	text-decoration: none!important;
+	color: #3F51B5!important;
 }
+a:hover{opacity: 0.8;}
 
+.main_scope{height: 100vh;}
 
+.left_scope{overflow: auto;}
+.left_scope-selectors{width: 100%;margin-bottom: 40px;}
+.left_scope-selectors > *{margin: 0px 20px;}
 
-.left_scope{
-  padding-top: 40px;
-}
-
-
-.settings{
-  width: 100%;
-}
-
-.boxes{
-
-}
-
-.right_scope{
-  overflow: hidden;
-}
-
-
-.input_item{
+/*Item*/
+.element-item{
   padding: 10px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
+}
+.element-item:focus{
+  border: 1px solid #3F51B5;
 }
 
-.input_item:focus{
-  border: 1px solid red;
+.md-title{
+	padding: 40px;
 }
+
+
+.right_scope{overflow: hidden;}
+.right_scope-photo{width: 100%;}
