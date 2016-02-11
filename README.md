@@ -5,7 +5,9 @@ This is a simple application to get acquainted with SVG Convolve Matrix filter.
 Here is a live [demo](https://github.com/AlexanderKozhevin/svg-convolution-matrix)
 
 As also you can run it locally via *gulp-connect*.
+
 To make it:
+
 1. Install npm dependencies
 ```javascript
 npm install
