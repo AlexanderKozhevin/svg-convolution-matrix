@@ -12,6 +12,7 @@ To make it:
 ```javascript
 npm install
 ```
+
 2. Run Gulp
 ```javascript
 gulp
