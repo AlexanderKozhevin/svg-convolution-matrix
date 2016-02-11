@@ -77,7 +77,10 @@
         for(var y = 0; y < $scope.axis.y; y++){
           $scope.values[y] = [];
           for(var x = 0; x < $scope.axis.x; x++){
-            $scope.values[y][x] = 8;
+            $scope.values[y][x] = -1;
+            if ((x==1) && (y==1)){
+              $scope.values[y][x] = 9
+            }
           }
         }
 

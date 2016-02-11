@@ -1,1 +1,5 @@
 node_modules/**
+bower_components/**
+production/assets/**
+npm-debug.log
+.DS_Store
