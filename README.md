@@ -1,8 +1,8 @@
-[# SVG FeConvolveMatrix](https://www.w3.org/TR/SVG/filters.html#feConvolveMatrixElement)
+# SVG FeConvolveMatrix
 
-This is a simple application to get acquainted with SVG Convolve Matrix filter.
+This is a simple application to get acquainted with [SVG Convolve Matrix filter](https://www.w3.org/TR/SVG/filters.html#feConvolveMatrixElement).
 
-Here is a live [demo](https://github.com/AlexanderKozhevin/svg-convolution-matrix)
+Here is a live **[demo](https://github.com/AlexanderKozhevin/svg-convolution-matrix)**
 
 As also you can run it locally via *gulp-connect*.
 
