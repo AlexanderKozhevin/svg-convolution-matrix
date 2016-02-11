@@ -2,21 +2,21 @@
 
 This is a simple application to get acquainted with [SVG Convolve Matrix filter](https://www.w3.org/TR/SVG/filters.html#feConvolveMatrixElement).
 
-Here is a live **[demo](https://github.com/AlexanderKozhevin/svg-convolution-matrix)**
+Here is a live **[demo](http://alexanderkozhevin.github.io/svg-convolution-matrix/)**
 
 As also you can run it locally via *gulp-connect*.
 
 To make it:
 
 1. Install npm dependencies
-```javascript
-npm install
-```
+  ```javascript
+  npm install
+  ```
 
 2. Run Gulp
-```javascript
-gulp
-```
+  ```javascript
+  gulp
+  ```
 Page will be available on *localhost:8080*.
 
 
